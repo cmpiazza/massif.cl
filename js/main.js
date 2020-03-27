@@ -1,3 +1,8 @@
+ AOS.init({
+  duration: 800,
+  easing: 'slide-up',
+  once: true
+ });
 (function($) {
 
 	'use strict';
@@ -71,7 +76,8 @@
       autoplay: true,
       stagePadding: 20,
       margin:50,
-      nav: true,
+      nav: false,
+      dots: true,
       smartSpeed: 1000,
       navText: ['<span class="ion-chevron-left">', '<span class="ion-chevron-right">'],
       responsive:{
@@ -84,7 +90,6 @@
           items:2
         },
         1000:{
-          // stagePadding: 200,
           items:2
         }
       }
@@ -214,3 +219,19 @@
   
 
 })(jQuery);
+
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Ver ejemplo";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Ocultar ejemplo";
+    moreText.style.display = "inline";
+  }
+}
